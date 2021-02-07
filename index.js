@@ -87,7 +87,7 @@ function init() {
         .prompt (questions)
             .then((data) =>{
                 const myReadme = generateMarkdown(data);
-                writeToFile('newreadme.md', myReadme);
+                writeToFile('README.md', myReadme);
             });
 }
 
