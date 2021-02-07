@@ -21,6 +21,42 @@ function generateMarkdown(data) {
 
   ## Table of Contents
   - [Motivation](#motivation)
+  - [Features](#features)
+  - [Screenshot](#screenshot)
+  - [How to use](#how-to-use)
+  - [Tests](#tests)
+  - [Roadmap](#roadmap)
+  - [Credits](#credits)
+  - [Licence](#licence)
+  - [Questions and Feedback](#questions-and-feedback)
+
+  ## Motivation
+  ${data.motivation}
+
+  ## Features
+  ${data.features}
+
+  ## Screenshot
+  ![${data.title} screenshot](${data.screenshot})
+
+  ## How to use
+  ${data.howtouse}
+
+  ## Tests
+  ${data.tests}
+
+  ## Roadmap
+  ${data.roadmap}
+
+  ## Credits
+
+  ## Licence
+
+  ## Questions and Feedback
+  Got questions or feedback? You can contact me on:
+
+    - [Github](https://github.com/${data.username})
+    - [Email](mailto:${data.email})
 
 `;
 }

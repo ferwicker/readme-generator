@@ -6,6 +6,16 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [
     {
+        type: 'input',
+        message: 'Your Github user name:',
+        name: 'username',
+    },
+    {
+        type: 'input',
+        message: 'Your email:',
+        name: 'email',
+    },
+    {
         type: "input",
         message: "What is your project's name?",
         name: "title",
@@ -14,8 +24,43 @@ const questions = [
         type: "input",
         message: "Write a short description for your project",
         name: 'description',
-    }
-    //project description, deployed link, github username, email,
+    },
+    {
+        type: "input",
+        message: "Link to your deployed project:",
+        name: 'deployedLink',
+    },
+    {
+        type: 'input',
+        message: 'Describe your motivation for creating this project:',
+        name: 'motivation',
+    },
+    {
+        type: 'input',
+        message: "Describe your project's features:",
+        name: 'features',
+    },
+    {
+        type: 'input',
+        message: 'Add a link to an image or video screenshot of your project:',
+        name: 'screenshot',
+    },
+    {
+        type: 'input',
+        message: 'Give users instructions on how to use this project:',
+        name: 'howtouse',
+    },
+    {
+        type: 'input',
+        message: 'Describe how to do tests for this project:',
+        name: 'tests', 
+    },
+    {
+        type: 'input',
+        message: 'Roadmap: what are the future development plans for this project?',
+        name: 'roadmap',
+    },
+    //screenshots, credits, licence
 ];
 
 // TODO: Create a function to write README file
@@ -30,7 +75,6 @@ function init() {
     inquirer
         .prompt (questions)
             .then((data) =>{
-                console.log ('questions asked');
                 const myReadme = generateMarkdown(data);
                 writeToFile('newreadme.md', myReadme);
             });
