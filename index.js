@@ -1,49 +1,34 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const fs = require('fs');
 const inquirer  = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        message: 'What is your name:',
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: 'Your Github user name:',
-        name: 'username',
-    },
-    {
-        type: 'input',
-        message: 'Your email:',
-        name: 'email',
-    },
-    {
-        type: "input",
         message: "What is your project's name?",
-        name: "title",
+        name: 'title',
     },
     {
-        type: "input",
-        message: "Write a short description for your project",
+        type: 'input',
+        message: 'Write a short description for your project',
         name: 'description',
     },
     {
-        type: "input",
-        message: "Link to your deployed project:",
-        name: 'deployedLink',
-    },
-    {
         type: 'input',
-        message: 'Describe your motivation for creating this project:',
-        name: 'motivation',
+        message: 'Link to your deployed project:',
+        name: 'deployedLink',
     },
     {
         type: 'input',
         message: "Describe your project's features:",
         name: 'features',
+    },
+    {
+        type: 'input',
+        message: 'Add the relative link to your screenshot or image:',
+        name: 'screenshot',
     },
     {
         type: 'input',
@@ -56,25 +41,39 @@ const questions = [
         name: 'howtouse',
     },
     {
-        type: 'input',
-        message: 'Describe how to do tests for this project:',
-        name: 'tests', 
-    },
-    {
-        type: 'input',
-        message: 'Roadmap: what are the future development plans for this project?',
-        name: 'roadmap',
-    },
-    {
         type: 'list',
         message: 'Choose your license:',
         choices: ['MIT', 'Apache 2.0', 'Creative Commons', 'GPLv2', 'GPLv3', 'no license'],
         name: 'license'
     },
-    //credits, licence
+    {
+        type: 'input',
+        message: 'Your name:',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'Describe the contributing guidelines for this project:',
+        name: 'contributing',
+    },
+    {
+        type: 'input',
+        message: 'Describe how to run tests for this project:',
+        name: 'tests', 
+    },
+    {
+        type: 'input',
+        message: 'Your Github user name:',
+        name: 'username',
+    },
+    {
+        type: 'input',
+        message: 'Your email:',
+        name: 'email',
+    },
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
                 err ? console.error(err) : console.log('Success')

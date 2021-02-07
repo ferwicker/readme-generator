@@ -25,11 +25,11 @@ const GPLv3 = {
 }
 
 
-const getLicenseInfo = ({badge, link}) => {
+const getLicenseInfo = ({badge, link}, license) => {
   return `## License
   [![License badge](${badge})](${link})
-  
-  [See license.](${link})`
+
+  This work is covered by ${license} license. For more information [see full license.](${link})`
 }
 
 
@@ -58,14 +58,14 @@ function renderLicenseSection(license, name) {
     return `## License
     No license.`
   } else {
-    return `${getLicenseInfo(licCode)}
-${license} © ${name}`
+    return `${getLicenseInfo(licCode, license)}
+  ${license} © ${name}`
   }
   
 }
 
 
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   const licenseSection = renderLicenseSection(data.license, data.name);
 
@@ -77,37 +77,29 @@ function generateMarkdown(data) {
   [See deployed application.](${data.deployedLink})
 
   ## Table of Contents
-  - [Motivation](#motivation)
   - [Features](#features)
-  - [Screenshot](#screenshot)
+  - [Installation](#installation)
   - [How to use](#how-to-use)
-  - [Tests](#tests)
-  - [Roadmap](#roadmap)
-  - [Credits](#credits)
   - [Licence](#licence)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
   - [Questions and Feedback](#questions-and-feedback)
-
-  ## Motivation
-  ${data.motivation}
 
   ## Features
   ${data.features}
 
-  ## Screenshot
   ![${data.title} screenshot](${data.screenshot})
 
   ## How to use
   ${data.howtouse}
 
+  ${licenseSection}
+
+  ## Contributing
+  ${data.contributing}
+
   ## Tests
   ${data.tests}
-
-  ## Roadmap
-  ${data.roadmap}
-
-  ## Credits
-
-  ${licenseSection}
 
   ## Questions and Feedback
   Got questions or feedback? You can contact me on:
