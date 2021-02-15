@@ -1,9 +1,9 @@
-# README generator
+# README Generator
 
   ## Description
   This awesome and easy README generator will make publishing your projects quick and easy, generating a nicely formatted README file automatically, so you can spend more time developing amazing stuff and less time formatting your markdown document.
 
-  [See walkthrough video.](https://www.youtube.com/watch?v=TvSqsZWvzkY)
+  [See deployed application.](https://github.com/ferwicker/readme-generator)
 
   ## Table of Contents
   - [Features](#features)
@@ -12,13 +12,11 @@
   - [Licence](#licence)
   - [Contributing](#contributing)
   - [Tests](#tests)
-  - [Roadmap](#roadmap)
   - [Questions and Feedback](#questions-and-feedback)
 
   ## Features
   This is a command line application that generates a readme with some pre-set sections. The application uses Inquirer to prompt for information, and populates a formatted .md README file from this information.
-
-  ### [See walkthrough video.](https://www.youtube.com/watch?v=TvSqsZWvzkY)
+  
 
   ## Installation
   Download the package, navigate to the folder from your terminal and run the npm install command to install the required dependencies.
@@ -37,9 +35,6 @@
 
   ## Tests
   From your terminal, navigate to the application's folder and run the npm test command. This will use Jest to run the tests.
-
-  ## Roadmap
-  In the near future, I want to continue developing this project to make it more useable and flexible for all kinds of projects, with a larger list of possible sections the user can choose to include in their README so they are not constrainer by the current pre-determined ones.
 
   ## Questions and Feedback
   Got questions or feedback? You can contact me on:

@@ -38,6 +38,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'Describe the installation process:',
+        name: 'installation',
+    },
+    {
+        type: 'input',
         message: 'Give users instructions on how to use this project:',
         name: 'howtouse',
     },

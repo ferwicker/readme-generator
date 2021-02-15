@@ -100,6 +100,9 @@ function generateMarkdown(data) {
   ${data.features}
   ${screenshottext}
 
+  ## Installation
+  ${data.installation}
+
   ## How to use
   ${data.howtouse}
 
@@ -114,8 +117,8 @@ function generateMarkdown(data) {
   ## Questions and Feedback
   Got questions or feedback? You can contact me on:
 
-    - [Github](https://github.com/${data.username})
-    - [Email](mailto:${data.email})
+  - [Github](https://github.com/${data.username})
+  - [Email](mailto:${data.email})
 
 `;
 }
