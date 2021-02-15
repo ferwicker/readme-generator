@@ -7,7 +7,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = [
     {
         type: 'input',
-        message: "What is your project's name?",
+        message: "What's your project's name?",
         name: 'title',
     },
     {
@@ -26,14 +26,15 @@ const questions = [
         name: 'features',
     },
     {
-        type: 'input',
-        message: 'Add the relative link to your screenshot or image:',
-        name: 'screenshot',
+        type: 'confirm',
+        message: 'Do you want to include a screenshot of your application?',
+        name: 'screenshotconfirm',
     },
     {
         type: 'input',
-        message: 'Add a link to an image or video screenshot of your project:',
+        message: 'Add the relative link to your screenshot here:',
         name: 'screenshot',
+        when: (data) => data.screenshotconfirm === true,
     },
     {
         type: 'input',
@@ -48,7 +49,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Your name:',
+        message: 'What is your name:',
         name: 'name',
     },
     {
@@ -73,7 +74,7 @@ const questions = [
     },
 ];
 
-// Create a function to write README file
+// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
                 err ? console.error(err) : console.log('Success')
@@ -86,7 +87,7 @@ function init() {
         .prompt (questions)
             .then((data) =>{
                 const myReadme = generateMarkdown(data);
-                writeToFile('README.md', myReadme);
+                writeToFile('GeneratedREADME.md', myReadme);
             });
 }
 

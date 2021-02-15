@@ -64,10 +64,21 @@ function renderLicenseSection(license, name) {
   
 }
 
+// generate screenshot if link provided
+function screenshot (confirm, screenshot, title){
+  if (confirm){
+    return `![${title} screenshot](${screenshot})
+    `;
+  } else {
+    return '';
+  }
+}
+
 
 // Create a function to generate markdown for README
 function generateMarkdown(data) {
   const licenseSection = renderLicenseSection(data.license, data.name);
+  const screenshottext = screenshot(data.screenshotconfirm, data.screenshot, data.title);
 
   return `# ${data.title}
 
@@ -87,8 +98,7 @@ function generateMarkdown(data) {
 
   ## Features
   ${data.features}
-
-  ![${data.title} screenshot](${data.screenshot})
+  ${screenshottext}
 
   ## How to use
   ${data.howtouse}
